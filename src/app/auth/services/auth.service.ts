@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   getCurrentUser(): Observable<CurrentUserInterface> {
-    const url = environment.apiUrl + '/user';
+    const url = environment.apiGetUserUrl + '/user';
     return this.http.get(url).pipe(map(this.getUser));
   }
 }
