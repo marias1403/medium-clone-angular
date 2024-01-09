@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { PersistenceService } from './shared/services/persistence.service';
 import { AuthInterceptor } from './shared/services/authInterceptor.service';
 
@@ -23,6 +24,7 @@ import { AuthInterceptor } from './shared/services/authInterceptor.service';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     TopBarModule,
+    GlobalFeedModule,
   ],
   providers: [
     PersistenceService,
