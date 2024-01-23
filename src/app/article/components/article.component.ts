@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { ArticleInterface } from '../../shared/types/article.interface';
 import { getArticleAction } from '../store/actions/getArticle.action';
+import { deleteArticleAction } from '../store/actions/deleteArticle.action';
 import {
   articleSelector,
   errorSelector,
@@ -74,5 +75,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   fetchData(): void {
     this.store.dispatch(getArticleAction({ slug: this.slug }));
+  }
+
+  deleteArticle(): void {
+    this.store.dispatch(deleteArticleAction({ slug: this.slug }));
   }
 }
