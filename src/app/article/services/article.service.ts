@@ -11,7 +11,7 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   deleteArticle(slug: string): Observable<{}> {
-    const url = `${environment.apiDeleteArticle}/articles/${slug}`;
+    const url = `${environment.apiUrl2}/articles/${slug}`;
     return this.http.delete<{}>(url);
   }
 }
