@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { ArticleInputInterface } from '../../../../types/articleInput.interface';
 import { BackendErrorsInterface } from '../../../../types/backendErrors.interface';
+import { ArticleFormInterface } from '../../../../types/articleForm.interface';
 
 @Component({
   selector: 'mc-article-form',
@@ -10,7 +11,7 @@ import { BackendErrorsInterface } from '../../../../types/backendErrors.interfac
   styleUrl: './article-form.component.scss',
 })
 export class ArticleFormComponent implements OnInit {
-  @Input('initialValues') initialValuesProps: ArticleInputInterface;
+  @Input('initialValues') initialValuesProps: ArticleFormInterface;
   @Input('isSubmitting') isSubmittingProps: boolean;
   @Input('errors') errorsProps: BackendErrorsInterface | null;
 
@@ -35,6 +36,6 @@ export class ArticleFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.articleSubmitEvent.emit(this.form.value);
+    this.articleSubmitEvent.emit({ article: this.form.value });
   }
 }

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ArticleInputInterface } from '../../../shared/types/articleInput.interface';
 import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface';
 import { createArticleAction } from '../../store/actions/createArticle.action';
+import { ArticleFormInterface } from '../../../shared/types/articleForm.interface';
 import {
   isSubmittingSelector,
   validationErrorsSelector,
@@ -16,7 +17,7 @@ import {
   styleUrl: './create-article.component.scss',
 })
 export class CreateArticleComponent implements OnInit {
-  initialValues: ArticleInputInterface = {
+  initialValues: ArticleFormInterface = {
     title: '',
     description: '',
     body: '',
